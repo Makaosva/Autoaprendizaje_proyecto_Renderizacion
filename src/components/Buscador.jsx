@@ -1,9 +1,14 @@
-import React from 'react'
+import { Form } from "react-bootstrap";
 
-function Buscador() {
+function Buscador({ buscar, setBuscar }) {
   return (
-    <div>Buscador</div>
-  )
+    <Form.Control
+      type="text"
+      value={buscar}
+      onChange={(e) => setBuscar(e.target.value)}
+      placeholder="Buscar tarea"
+    />
+  );
 }
 
-export default Buscador
+export default Buscador;

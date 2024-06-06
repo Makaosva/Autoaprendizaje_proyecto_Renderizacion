@@ -1,12 +1,15 @@
 import { useState } from "react";
 import "./App.css";
-import { BaseColaboradores } from "./assets/BaseColaboradores.js";
+import { BaseColaboradores } from "./assets/BaseColaboradores";
 import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Listado from "./components/Listado";
+import Buscador from "./components/Buscador";
 
 function App() {
   const [colaboradores, setColaboradores] = useState(BaseColaboradores);
-
+  const [buscar, setBuscar] = useState("");
+  
   return (
     <>
       <h1>Lista de colaboradores</h1>
@@ -18,10 +21,10 @@ function App() {
           </Col>
         </Row>
         <Row>
-          <Col md={6} sm={12}>
+          <Col>
             <Listado colaboradores={colaboradores} />
           </Col>
-          <Col md={6}>
+          <Col>
             <p>Formulario</p>
             {/*  <Formulario agregarTarea={agregarTarea} />*/}
           </Col>
